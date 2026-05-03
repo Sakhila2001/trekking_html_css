@@ -4,8 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summit Nepal – Trekking & Adventure</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script.js" defer></script>
   </head>
+  <style>
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* DARK OVERLAY */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    /* CONTENT ABOVE VIDEO */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* optional: scroll cue above video */
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 20px;
+      z-index: 3;
+    }
+  </style>
   <body>
     <!-- ===================== HEADER / NAV ===================== -->
     <header class="site-header">
@@ -30,23 +63,23 @@
 
             <!-- PACKAGES DROPDOWN -->
             <li class="has-dropdown">
-              <button class="dropdown-toggle">Packages ▾</button>
+              <button class="dropdown-toggle">Packages</button>
               <ul class="dropdown">
-                <li><a href="everest.html">Everest Base Camp</a></li>
-                <li><a href="annapurna.html">Annapurna Circuit</a></li>
-                <li><a href="langtang.html">Langtang Valley</a></li>
-                <li><a href="manaslu.html">Manaslu Trek</a></li>
+                <li><a href="destinations.html">Everest Base Camp</a></li>
+                <li><a href="destinations.html">Annapurna Circuit</a></li>
+                <li><a href="destinations.html">Langtang Valley</a></li>
+                <li><a href="destinations.html">Manaslu Trek</a></li>
               </ul>
             </li>
 
             <!-- DESTINATIONS DROPDOWN -->
             <li class="has-dropdown">
-              <button class="dropdown-toggle">Destinations ▾</button>
+              <button class="dropdown-toggle">Destinations</button>
               <ul class="dropdown">
-                <li><a href="everest-region.html">Everest Region</a></li>
-                <li><a href="annapurna-region.html">Annapurna</a></li>
-                <li><a href="mustang.html">Upper Mustang</a></li>
-                <li><a href="dolpo.html">Dolpo</a></li>
+                <li><a href="region.html">Everest Region</a></li>
+                <li><a href="region.html">Annapurna</a></li>
+                <li><a href="region.html">Upper Mustang</a></li>
+                <li><a href="region.html">Dolpo</a></li>
               </ul>
             </li>
 
@@ -63,11 +96,9 @@
       <!-- ===================== HERO ===================== -->
       <section id="home" class="hero" aria-label="Hero">
         <div class="hero-overlay"></div>
-        <div
-          class="hero-bg-img"
-          role="img"
-          aria-label="Himalayan mountains panorama"
-        ></div>
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="videos/hero.mp4" type="video/mp4" />
+        </video>
 
         <div class="container hero-content">
           <p class="hero-eyebrow">Nepal's #1 Trekking Company</p>
@@ -628,6 +659,42 @@
                 </div>
               </footer>
             </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+
+              <p>
+                "The Everest Three Passes Trek was the hardest thing I've ever
+                done — and also the most rewarding. The guides were incredibly
+                patient, especially during the high passes where weather changed
+                fast. I always felt safe and well taken care of."
+              </p>
+
+              <footer>
+                <div class="avatar" aria-hidden="true">DL</div>
+                <div class="reviewer-info">
+                  <cite>David Lee</cite>
+                  <span>USA · Three Passes Trek</span>
+                </div>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+
+              <p>
+                "Gokyo Lakes was beyond anything I expected. The turquoise
+                lakes, the quiet trails, and the view from Gokyo Ri were unreal.
+                Summit Nepal organized everything perfectly, and our guide was
+                always one step ahead of every situation."
+              </p>
+
+              <footer>
+                <div class="avatar" aria-hidden="true">NS</div>
+                <div class="reviewer-info">
+                  <cite>Nina Schmidt</cite>
+                  <span>Switzerland · Gokyo Lakes Trek</span>
+                </div>
+              </footer>
+            </blockquote>
           </div>
 
           <div class="trust-badges">
@@ -750,10 +817,39 @@
                 <a href="#" class="link-arrow">Read article →</a>
               </div>
             </article>
+            <article class="blog-card">
+              <div
+                class="blog-img blog-img-altitude"
+                role="img"
+                aria-label="High altitude acclimatization on Himalayan trail"
+              ></div>
+
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-category">Health</span>
+                  <time datetime="2025-04-05">Apr 05, 2025</time>
+                </div>
+
+                <h3>
+                  <a href="#"
+                    >How to Prevent Altitude Sickness in Nepal Treks</a
+                  >
+                </h3>
+
+                <p>
+                  Altitude sickness is one of the biggest challenges for
+                  trekkers in the Himalayas. Learn how acclimatization,
+                  hydration, pacing, and proper planning can help you stay safe
+                  above 3,000 meters.
+                </p>
+
+                <a href="#" class="link-arrow">Read article →</a>
+              </div>
+            </article>
           </div>
 
           <div class="section-cta">
-            <a href="#" class="btn btn-outline">Read All Articles</a>
+            <a href="blog.html" class="btn btn-outline">Read All Articles</a>
           </div>
         </div>
       </section>
@@ -992,35 +1088,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="nepal-trekking.js"></script>
-    <script>
-      const navToggle = document.querySelector(".nav-toggle");
-      const nav = document.querySelector(".main-nav");
-
-      navToggle.addEventListener("click", () => {
-        nav.classList.toggle("open");
-
-        const expanded =
-          navToggle.getAttribute("aria-expanded") === "true" || false;
-        navToggle.setAttribute("aria-expanded", !expanded);
-      });
-
-      // Dropdown toggle for mobile
-      const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-      dropdownToggles.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          const parent = btn.parentElement;
-
-          // close others (optional but cleaner UX)
-          document.querySelectorAll(".has-dropdown").forEach((item) => {
-            if (item !== parent) item.classList.remove("open");
-          });
-
-          parent.classList.toggle("open");
-        });
-      });
-    </script>
   </body>
 </html>
