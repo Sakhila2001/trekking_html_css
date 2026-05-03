@@ -1845,7 +1845,8 @@ blockquote {
 .region-img,
 .package-img,
 .blog-img,
-.sub-img {
+.sub-img,
+.dest-img1 {
   width: 100%;
   height: 220px;
   border-radius: var(--radius-md);
@@ -1919,9 +1920,8 @@ blockquote {
   background-image: url("../images/Mustang & Manaslu.jpg");
 }
 .dest-dolpo {
-  background-image: url("../images/Dolpo\ Region.jpg");
+  background-image: url("../images/Dolpo\ Region.png");
 }
-
 
 /* ----------------------------------------------------------------
    17. RESPONSIVE — MOBILE (≤ 600px)
